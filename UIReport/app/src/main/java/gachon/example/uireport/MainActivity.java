@@ -26,12 +26,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText name_edit;
     RelativeLayout edit_layout;
     Menu menu;
-    boolean is_text_exit;
+    boolean is_text_exist;
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu)
     {
-        if(is_text_exit)
+        if(is_text_exist)
             this.menu.findItem(STYLE_MENU).setEnabled(true);
 
         return super.onPrepareOptionsMenu(menu);
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        is_text_exit=false;
+        is_text_exist=false;
         setContentView(R.layout.activity_main);
         setDesignInstance();
     }
@@ -90,17 +90,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         edit_layout.setVisibility(View.INVISIBLE);
         name_view.setVisibility(View.VISIBLE);
+        String edit_text=name_edit.getText().toString();
 
         switch(v.getId())
         {
             case R.id.button_ok:
-                if(!is_text_exit)
+                if(!is_text_exist)
                 {
-                    name_view.append(name_edit.getText());
-                    is_text_exit = true;
+                    name_view.append(edit_text);
+                    is_text_exist = true;
                 }
                 else
-                    name_view.append("\n"+name_edit.getText());
+                    name_view.append("\n"+edit_text);
                 break;
         }
         name_edit.setText("");
