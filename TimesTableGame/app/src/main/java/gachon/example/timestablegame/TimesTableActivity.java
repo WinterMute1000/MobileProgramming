@@ -53,13 +53,14 @@ public class TimesTableActivity extends AppCompatActivity implements OnClickList
             @Override
             public void run()
             {
-                Message message=Message.obtain(timeRunningHandler,TIME_RUNNING,timeProcess,0);
+                while(true)
+                {
+                    Message message = Message.obtain(timeRunningHandler, TIME_RUNNING, timeProcess, 0);
+                    timeRunningHandler.sendMessage(message);
 
-                timeRunningHandler.sendMessageDelayed(message,600);
-
-                /*try { Thread.sleep(600); }
-                catch(InterruptedException e) {e.printStackTrace();}
-                */
+                    try { Thread.sleep(600); }
+                    catch (InterruptedException e) { e.printStackTrace(); }
+                }
             }
         });
 
@@ -72,10 +73,7 @@ public class TimesTableActivity extends AppCompatActivity implements OnClickList
         resultText=(TextView)findViewById(R.id.result);
 
         resultText.setText("0");
-
-        num1=RANDOM.nextInt(7)+2;
-        num2=RANDOM.nextInt(7)+2;
-        problemText.setText(Integer.toString(num1)+" * "+Integer.toString(num2));
+        makeNewProblem();
     }
 
 
@@ -133,7 +131,10 @@ public class TimesTableActivity extends AppCompatActivity implements OnClickList
                             int beforeResult=Integer.parseInt(resultText.getText().toString());
                             beforeResult++;
                             resultText.setText(Integer.toString(beforeResult));
+                            makeNewProblem();
                         }
+
+                        answerText.setText("");
                     }
                     else if(msg.arg1==CANCEL)
                         answerText.setText("");
@@ -154,7 +155,7 @@ public class TimesTableActivity extends AppCompatActivity implements OnClickList
     public boolean onCreateOptionsMenu(Menu menu)
     {
         menu.add(Menu.NONE,MENU_EXIT,Menu.NONE,"Exit");
-        menu.add(Menu.NONE,MENU_CLEAR,Menu.NONE,"CLEAR");
+        menu.add(Menu.NONE,MENU_CLEAR,Menu.NONE,"Clear");
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -221,8 +222,16 @@ public class TimesTableActivity extends AppCompatActivity implements OnClickList
         buttonClickHandler.sendMessage(message);
     }
 
+    private void makeNewProblem()
+    {
+        num1=RANDOM.nextInt(7)+2;
+        num2=RANDOM.nextInt(7)+2;
+        problemText.setText(Integer.toString(num1)+" * "+Integer.toString(num2));
+    }
+
     private void endGame(int result)
     {
+        timeoutThread.interrupt();
         Intent i=getIntent();
 
         timeRunningHandler.removeMessages(TIME_RUNNING);
