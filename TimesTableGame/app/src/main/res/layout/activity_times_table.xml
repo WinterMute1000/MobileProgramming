@@ -12,21 +12,21 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="60sp"
-            android:textSize="50sp"
+            android:layout_height="50sp"
+            android:textSize="40sp"
             android:id="@+id/problem"
             android:textColor="#FFFFFF"/>
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="60sp"
-            android:textSize="50sp"
+            android:layout_height="50sp"
+            android:textSize="40sp"
             android:id="@+id/answer"
             android:layout_below="@id/problem"
             android:textColor="#FFFFFF"/>
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="60sp"
-            android:textSize="50sp"
+            android:layout_height="50sp"
+            android:textSize="40sp"
             android:id="@+id/result"
             android:layout_below="@id/answer"
             android:textColor="#FFFFFF"/>
@@ -49,21 +49,21 @@
                     android:id="@+id/number1"
                     android:text="1"
                     android:gravity="center"
-                    android:layout_margin="5sp"/>
+                    android:layout_margin="2sp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/number2"
                     android:text="2"
                     android:gravity="center"
-                    android:layout_margin="5sp"/>
+                    android:layout_margin="2sp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/number3"
                     android:text="3"
                     android:gravity="center"
-                    android:layout_margin="5sp"/>
+                    android:layout_margin="2sp"/>
             </TableRow>
             <TableRow
                 android:layout_weight="1">
@@ -73,21 +73,21 @@
                     android:id="@+id/number4"
                     android:text="4"
                     android:gravity="center"
-                    android:layout_margin="5sp"/>
+                    android:layout_margin="2sp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/number5"
                     android:text="5"
                     android:gravity="center"
-                    android:layout_margin="5sp"/>
+                    android:layout_margin="2sp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/number6"
                     android:text="6"
                     android:gravity="center"
-                    android:layout_margin="5sp"/>
+                    android:layout_margin="2sp"/>
             </TableRow>
             <TableRow
                 android:layout_weight="1">
@@ -97,21 +97,21 @@
                     android:id="@+id/number7"
                     android:text="7"
                     android:gravity="center"
-                    android:layout_margin="5sp"/>
+                    android:layout_margin="2sp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/number8"
                     android:text="8"
                     android:gravity="center"
-                    android:layout_margin="5sp"/>
+                    android:layout_margin="2sp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/number9"
                     android:text="9"
                     android:gravity="center"
-                    android:layout_margin="5sp"/>
+                    android:layout_margin="2sp"/>
             </TableRow>
             <TableRow
                 android:layout_weight="1">
@@ -121,21 +121,21 @@
                     android:id="@+id/cancel"
                     android:text="cancel"
                     android:gravity="center"
-                    android:layout_margin="5sp"/>
+                    android:layout_margin="2sp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/number0"
                     android:text="0"
                     android:gravity="center"
-                    android:layout_margin="5sp"/>
+                    android:layout_margin="2sp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/enter"
                     android:text="enter"
                     android:gravity="center"
-                    android:layout_margin="5sp"/>
+                    android:layout_margin="2sp"/>
             </TableRow>
         </TableLayout>
     </RelativeLayout>

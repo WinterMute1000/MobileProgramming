@@ -144,8 +144,6 @@ public class TimesTableActivity extends AppCompatActivity implements OnClickList
                         answerText.append(value);
                     }
                 }
-
-                this.removeMessages(ON_BUTTON_CLICKED);
             }
         };
     }
