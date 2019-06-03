@@ -53,13 +53,14 @@ public class TimesTableActivity extends AppCompatActivity implements OnClickList
             @Override
             public void run()
             {
-                while(true)
+                while (true)
                 {
                     Message message = Message.obtain(timeRunningHandler, TIME_RUNNING, timeProcess, 0);
                     timeRunningHandler.sendMessage(message);
 
-                    try { Thread.sleep(600); }
-                    catch (InterruptedException e) { e.printStackTrace(); }
+                    try
+                    { Thread.sleep(600); }
+                    catch (InterruptedException e) { e.printStackTrace();}
                 }
             }
         });
@@ -105,14 +106,11 @@ public class TimesTableActivity extends AppCompatActivity implements OnClickList
             {
                 if(msg.what==TIME_RUNNING)
                 {
+                    timeProcess++;
+                    timeoutBar.setProgress(timeProcess);
 
                     if(timeoutBar.getProgress()==timeoutBar.getMax())
                         endGame(RESULT_OK);
-                    else
-                        {
-                            timeProcess++;
-                            timeoutBar.setProgress(timeProcess);
-                        }
                 }
             }
         };
